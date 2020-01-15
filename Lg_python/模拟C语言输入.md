@@ -97,3 +97,10 @@ a, b = (int(x) for x in line.split())
 
 print(a + b)
 ```
+
+### 9.增加递归深度（默认100）
+
+``` python
+import sys   
+sys.setrecursionlimit(100000)
+```
