@@ -27,7 +27,7 @@ int rec(int i, int j){
 int main()
 {
 	cin >> n;
-	for( int i = 1; i <= n; i++ )
+	for( int i = 0; i < n; i++ )
 		 cin >> w[i] >> v[i];
 	cin >> W;
 	
@@ -37,7 +37,9 @@ int main()
 
 /*
 ²âÊÔÊı¾İ£º 
-	4
-	2 3 1 2 3 4 2 2
-	5 
+4
+2 3 1 2 3 4 2 2
+5 
+Êä³ö£º
+7
 */
