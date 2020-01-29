@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int const MAX = 1E3;
+int const MAX = 0X7FFF;
 
 //输入
 int Test[MAX];
@@ -70,6 +70,40 @@ int QuickSort( int *Target, int Left, int Right){
     return 0;
 }
 
+//插入排序
+int InsertSort(int *Target, int count){
+    int temp;
+    printf("插入排序:\n");
+    for( int i = 1; i <= count; i++ ){
+        temp = Target[i];
+        for( int j = 1; j <= i - 1; j++ ){
+            if( Target[i] < Target[j] ){
+                for( int k = i; k <= j + 1; k++ ){
+                    Target[k] = Target[k - 1];
+                }
+                Target[j] = temp;
+                break;
+            }
+        }
+    }
+
+    for( int i = 1; i <= count; i++){
+        printf("%5d", Target[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+//输出数组
+void Print(int start, int end){
+    for( int i = start; i <= end; i++ ){
+                printf("%5d", Test[i]);
+        if( i % 30 == 0 )
+            cout << endl;
+    }
+}
+
 int main(){
     //输入
     cout << "\n============输入==========" << endl;
@@ -79,19 +113,18 @@ int main(){
 
     cout << "============输出==========" << endl;
     //生产随机数列
-    srand( (int)time(NULL) );
+    srand( (int)time(NULL) );       //保证每次启动程序的随机数不同
     int i;
     cout << "原数组为：\n";
     for( i = 1; i <= n; i++ ){
-        Test[i] = rand() % ( n + 1 );
+        Test[i] = rand() % ( n + 1 );       //n 以内的随机数用 rand() % (n + 1)
         printf("%5d", Test[i]);
-        if( i % 10 == 0 )
+        if( i % 30 == 0 )
             cout << endl;
     }
 
     //换行增加美观
-    if( i < 10 )
-        cout << endl;
+    cout << endl;
 
     //复制原数组，防止原数组被修改
     int temp[MAX];
@@ -110,6 +143,11 @@ int main(){
     for( int i = 1; i <= n; i++){
         printf("%5d", temp[i]);
     }
+
+    cout << endl;
+
+    //插入排序
+    InsertSort(temp, n);
 
     return 0;
 }
