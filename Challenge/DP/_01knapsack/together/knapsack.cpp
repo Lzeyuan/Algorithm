@@ -30,7 +30,7 @@ int rec1(int i, int j){
 }
 
 //02时间优化递归（一开始要初始化数组为-1）
-int dp[MAX_N + 2][MAX_KNAPSACK + 1];		//输入从1开始则MAX_N需要+2，第一行作废
+int dp[MAX_N + 2][MAX_KNAPSACK + 1];		//输入从1开始则 MAX_N 需要+2，第一行作废
 int rec2(int i, int j) {
 	if( dp[i][j] >= 0 ){
 		return dp[i][j];
@@ -48,7 +48,7 @@ int rec2(int i, int j) {
 }
 
 //03循环（正序）
-int dp3[MAX_N + 2][MAX_KNAPSACK + 1];
+int dp3[MAX_N + 2][MAX_KNAPSACK + 1];		//输入从1开始则 MAX_N 需要+2，第一行作废
 int rec3(int j) {
 	for ( int i = 1; i <= n; i++ ) {
 		for ( int k = j; k >= 0; k-- ) {
@@ -72,7 +72,6 @@ int rec4(int j) {
 	}
 	return f_space[j];
 }
-
 
 int main(){
 	cin >> n;
