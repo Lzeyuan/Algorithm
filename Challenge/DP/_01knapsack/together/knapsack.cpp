@@ -50,7 +50,7 @@ int rec2(int i, int j) {
 //03循环（正序）
 int dp3[MAX_N + 2][MAX_KNAPSACK + 1];		//输入从1开始则 MAX_N 需要+2，第一行作废
 int rec3(int j) {
-	for ( int i = 1; i <= n; i++ ) {
+	for ( int i = 1; i <= n; i++ ) {		
 		for ( int k = j; k >= 0; k-- ) {
 			if( k < w[i] ){
 				dp3[i + 1][k] = dp3[i][k];
