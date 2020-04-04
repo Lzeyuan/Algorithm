@@ -54,4 +54,4 @@ a = [list(map(int, input().split())) for i in range(n)]
 
 ​	原因看下图，矩阵X,Y，并没有明确说明是x行，y列，只能自己重新规定n行，m列,因此，输入时则需要逐个输入。
 
-![2](..\图片\2.png)
+![2](https://github.com/Lzeyuan/Algorithm/blob/master/Python/image/2.png)
